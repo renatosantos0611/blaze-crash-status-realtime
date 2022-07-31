@@ -6,7 +6,6 @@ import {
   WebSocketServer,
 } from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
-import { BlazeCrashService } from 'src/blaze-crash/blaze-crash.service';
 import { SocketService } from './socket.service';
 
 @WebSocketGateway({ cors: { origin: '*' } })
@@ -14,7 +13,6 @@ export class SocketGateway implements OnGatewayConnection, OnGatewayDisconnect {
 
   constructor(
     private readonly socketService: SocketService,
-    private readonly blazeCrashService: BlazeCrashService,
   ) {}
 
   @WebSocketServer()
