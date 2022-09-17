@@ -2,6 +2,7 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
 import { lastValueFrom } from 'rxjs';
+import { TelegramService } from 'src/telegram/services';
 import { BlazeCrashBulder, BlazeCrashProps } from './types/blaze-crash.types';
 
 @Injectable()
@@ -34,7 +35,7 @@ export class BlazeCrashService {
     }
   }
 
-  getRecords() {
+  public getRecords() {
     return this.records;
   }
 
